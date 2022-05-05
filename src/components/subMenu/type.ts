@@ -1,5 +1,6 @@
 export interface MenuInfo {
-    key: string,
+    id: string,
+    url: string,
     title: string,
     icon?: string,
     children?: MenuInfo[],

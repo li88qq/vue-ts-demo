@@ -2,7 +2,7 @@
   <a-row class="nav-main">
     <template v-for="item in navigation" :key="item.name">
       <a-col :span="4" class="nav">
-        <a-button type="link" :title="item.remark">
+        <a-button type="link" :title="item.remark" @click="toPath(item.url)">
           <template #icon v-if="item.icon">
             <img :src="item.icon"/>
           </template>
@@ -15,6 +15,10 @@
 
 <script setup lang="ts">
 import {navigation} from './data'
+
+const toPath = (url: string) => {
+  window.open(url)
+}
 </script>
 <style scoped lang="less">
 .nav-main {
